@@ -131,16 +131,15 @@ if(isset($_POST['input'])){
         }
     }
 
-    $perpustakaan = new pinjam($nama,$jenis,$judul,$halaman);
-    $perpustakaan = $this->minjam($tglPinjam,$tglKembali,$verifikasi);
+    $perpustakaan = new pinjam($nama,$jenis,$judul,$halaman,$tglPinjam,$tglKembali,$verifikasi);
 
     echo "Nama : ". $perpustakaan->nama(). "<br>";
     echo "Jenis Buku : ". $perpustakaan->jenis. "<br>";
     echo "Judul Buku : ". $perpustakaan->judul. "<br>";
     echo "Jumlah Halaman : ". $perpustakaan->halaman. "<br>";
-    echo "Tanggal Pinjam: ". $perpustakaan->tanggal(). "<br>";
-    echo "Tanggal Kembali: ". $perpustakaan->kembali(). "<br>";
-    echo "Tanggal Verifikasi: ". $perpustakaan->Verifikasi(). "<br>";
+    echo "Tanggal Pinjam: ". $tglPinjam. "<br>";
+    echo "Tanggal Kembali: ". $tglKembali. "<br>";
+    echo "Tanggal Verifikasi: ". $verifikasi. "<br>";
     echo "Lama Pinjam : ". $hari. " Hari<br>";
     echo "Telat : ". $telat. " Hari <br>";
 }
